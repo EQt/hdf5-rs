@@ -37,4 +37,14 @@ mod tests {
             assert!(*H5P_CLS_ROOT > 0);
         }
     }
+
+    #[cfg(hdf5_1_10)]
+    #[test]
+    pub fn test_smoke() {
+        assert!(*H5P_CLS_ROOT < 0);
+        unsafe {
+            assert!(super::h5p::H5P__init_package() >= 0);
+        }
+        assert!(*H5P_CLS_ROOT > 0);
+    }
 }

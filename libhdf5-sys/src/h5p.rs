@@ -600,3 +600,9 @@ extern {
     pub fn H5Pget_core_write_tracking(fapl_id: hid_t, is_enabled: *mut hbool_t, page_size: *mut
                                       size_t) -> herr_t;
 }
+
+
+#[cfg(hdf5_1_10)]
+extern {
+    pub fn H5P__init_package() -> herr_t;
+}
