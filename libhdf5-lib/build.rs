@@ -71,7 +71,7 @@ fn find_hdf5_libs() -> (Vec<String>, Vec<String>) {
     if let Some(libdir) = libdir_from_path() {
         dirs.push(libdir);
     }
-    if let Ok(_library) = pkg_config::Config::new().find("hdf5") {
+    if let Ok(_library) = pkg_config::Config::new().probe("hdf5") {
         // if dirs.is_empty() {
         //     for dir in library.link_paths.iter() {
         //         dirs.push(dir.to_str().unwrap().into());
