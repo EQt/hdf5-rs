@@ -71,6 +71,7 @@ extern {
 
 pub use self::globals::*;
 
+#[allow(safe_extern_statics)]
 #[cfg(not(target_env = "msvc"))]
 mod globals {
     pub use h5i::hid_t as id_t;

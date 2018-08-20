@@ -42,6 +42,7 @@ impl Default for H5G_info_t {
     fn default() -> H5G_info_t { unsafe { ::std::mem::zeroed() } }
 }
 
+#[allow(safe_extern_statics)]
 extern {
     pub fn H5Gcreate2(loc_id: hid_t, name: *const c_char, lcpl_id: hid_t, gcpl_id: hid_t, gapl_id:
                       hid_t) -> hid_t;

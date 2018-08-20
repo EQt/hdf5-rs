@@ -154,6 +154,7 @@ mod globals {
     pub static H5P_LST_LINK_ACCESS: &'static id_t = &H5P_LST_LINK_ACCESS_g;
 }
 
+#[allow(safe_extern_statics)]
 #[cfg(all(hdf5_1_8_14, not(target_env = "msvc")))]
 mod globals {
     pub use h5i::hid_t as id_t;
