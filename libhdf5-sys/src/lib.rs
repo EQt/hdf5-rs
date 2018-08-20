@@ -27,13 +27,13 @@ pub mod h5pl;
 
 #[cfg(test)]
 mod tests {
-    use super::h5::H5open;
     use super::h5p::H5P_CLS_ROOT;
 
+    #[cfg(not(hdf5_1_10))]
     #[test]
     pub fn test_smoke() {
         unsafe {
-            H5open();
+            super::h5::H5open();
             assert!(*H5P_CLS_ROOT > 0);
         }
     }
